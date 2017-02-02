@@ -42,6 +42,7 @@ export getSiteIconId from './get-site-icon-id';
 export getSiteIconUrl from './get-site-icon-url';
 export getTimezonesByContinent from './get-timezones-by-continent';
 export getTimezones from './get-timezones';
+export getTimezonesLabel from './get-timezones-label';
 export getTimezonesLabels from './get-timezones-labels';
 export getTimezonesLabelsByContinent from './get-timezones-labels-by-continent';
 export getUpcomingBillingTransactions from './get-upcoming-billing-transactions';
