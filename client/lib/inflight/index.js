@@ -10,6 +10,10 @@ module.exports = {
 		inflight.add( requestKey );
 	},
 
+	completeRequest: function( requestKey ) {
+		inflight.delete( requestKey );
+	},
+
 	requestTracker: function( requestKey, callback ) {
 		inflight.add( requestKey );
 
