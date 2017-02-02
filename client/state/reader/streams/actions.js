@@ -3,6 +3,7 @@
  */
 import {
 	READER_STREAMS_PAGE_REQUEST,
+	READER_STREAMS_PAGE_RECEIVE,
 	READER_STREAMS_SHOW_UPDATES,
 	READER_STREAMS_SELECT_ITEM,
 	READER_STREAMS_FILL_GAP,
@@ -20,12 +21,21 @@ import {
  * @param  {object} range    The range of posts. Parameters vary by stream type.
  * @return {Promise}          A promise that fulfils when the page returns.
  */
-export function fetchPosts( streamId, range ) {
+export function requestPage( streamId, query ) {
 	return {
 		type: READER_STREAMS_PAGE_REQUEST,
 		streamId,
-		range
+		query
 	};
+}
+
+export function receivePage( streamId, query, page ) {
+	return {
+		type: READER_STREAMS_PAGE_RECEIVE,
+		streamId,
+		query,
+		payload: page,
+	}
 }
 
 export function showUpdates( streamId ) {

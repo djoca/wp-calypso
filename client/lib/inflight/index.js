@@ -6,6 +6,10 @@ module.exports = {
 		return inflight.has( requestKey );
 	},
 
+	markRequestInflight: function( requestKey ) {
+		inflight.add( requestKey );
+	},
+
 	requestTracker: function( requestKey, callback ) {
 		inflight.add( requestKey );
 
@@ -27,5 +31,9 @@ module.exports = {
 		);
 		// return the original promise so any subsequent thens don't flow through our handlers
 		return promise;
+	},
+
+	_clear: function() {
+		inflight.clear();
 	}
 };
