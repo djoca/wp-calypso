@@ -31,8 +31,8 @@ export const BoostedPostTour = makeTour(
 		when={ and(
 			isEnabled( 'boosted-post-survey' ),
 			isDesktop,
-			isAbTestInVariant( 'boostedPostSurvey', 'enabled' ),
 			isSelectedSitePlanPaid,
+			isAbTestInVariant( 'boostedPostSurvey', 'enabled' ),
 		) }
 	>
 		<Step name="init" placement="right">
